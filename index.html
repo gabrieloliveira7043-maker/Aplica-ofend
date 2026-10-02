@@ -268,12 +268,6 @@
   .fb-tag{font-size:11px;letter-spacing:.24em;font-weight:700;color:var(--gold);margin:2px 4px 14px;}
   .fb-shot{position:relative;background:#fff;border:1px solid #e6e0d2;border-radius:14px;padding:14px 4px 14px;overflow:hidden;box-shadow:0 14px 30px -18px rgba(11,23,48,.25);min-height:360px;display:flex;align-items:center;}
   .fb-shot img{width:100%;height:auto;display:block;}
-  .fb-shot.long{height:360px;align-items:flex-start;}
-  .fb-shot.long::after{content:"";position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(180deg,rgba(255,255,255,0),#fff 85%);pointer-events:none;transition:opacity .3s;}
-  .fb-shot.long.open{height:auto;padding-bottom:64px;}
-  .fb-shot.long.open::after{opacity:0;}
-  .fb-more{position:absolute;z-index:2;left:50%;bottom:14px;transform:translateX(-50%);white-space:nowrap;background:rgba(11,23,48,.85);border:1px solid var(--gold);border-radius:999px;cursor:pointer;font-family:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#fff;padding:9px 18px;transition:background .25s;}
-  .fb-more:hover{background:var(--gold);color:var(--navy-deep);}
   .test-card .test-body{padding:20px 4px 4px;}
   /* ----- Bio da Camila ----- */
   .bio{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;max-width:1040px;margin:64px auto 0;}
@@ -475,7 +469,7 @@
       </div>
       <div class="test-card">
         <div class="fb-tag">#EUCONQUISTEI</div>
-        <div class="fb-shot long"><img src="fb-flavia.png" alt="Depoimento de Flávia" loading="lazy"><button class="fb-more" type="button">Ler depoimento completo</button></div>
+        <div class="fb-shot"><img src="fb-flavia.png" alt="Depoimento de Flávia" loading="lazy"></div>
         <div class="test-body">
           <div class="test-avatar-row"><div class="test-avatar">F</div><div><div class="test-name">Flávia</div><div class="test-role">Aluna FEND</div></div></div>
           <p>Reposicionou o formato de entrega e subiu o ticket semestral de 48k para 70k. Saiu de quem executa para conselheira na mesa dos empresários.</p>
@@ -483,7 +477,7 @@
       </div>
       <div class="test-card">
         <div class="fb-tag">#EUCONQUISTEI</div>
-        <div class="fb-shot long"><img src="fb-patricia.png" alt="Depoimento de Patrícia" loading="lazy"><button class="fb-more" type="button">Ler depoimento completo</button></div>
+        <div class="fb-shot"><img src="fb-patricia.png" alt="Depoimento de Patrícia" loading="lazy"></div>
         <div class="test-body">
           <div class="test-avatar-row"><div class="test-avatar">P</div><div><div class="test-name">Patrícia</div><div class="test-role">Aluna FEND</div></div></div>
           <p>Largou os projetos que eram só bastidor e pouco retorno. Fechou uma consultoria de 10k sem entregar operacional, pela primeira vez paga pra pensar, não pra executar.</p>
@@ -491,7 +485,7 @@
       </div>
       <div class="test-card">
         <div class="fb-tag">#EUCONQUISTEI</div>
-        <div class="fb-shot long"><img src="fb-leticia.png" alt="Depoimento de Letícia" loading="lazy"><button class="fb-more" type="button">Ler depoimento completo</button></div>
+        <div class="fb-shot"><img src="fb-leticia.png" alt="Depoimento de Letícia" loading="lazy"></div>
         <div class="test-body">
           <div class="test-avatar-row"><div class="test-avatar">L</div><div><div class="test-name">Letícia</div><div class="test-role">Aluna FEND</div></div></div>
           <p>Fechou contratos nacionais e internacionais, subiu o ticket da agência e enxugou a entrega. Passou a cobrar pela decisão e não pelo volume operacional.</p>
@@ -690,7 +684,6 @@
     s.addEventListener('mousedown',e=>{d=true;x=e.pageX;l=s.scrollLeft;s.style.cursor='grabbing';});
     window.addEventListener('mouseup',()=>{d=false;s.style.cursor='grab';});
     window.addEventListener('mousemove',e=>{if(!d)return;s.scrollLeft=l-(e.pageX-x);});})();
-  document.querySelectorAll('.fb-more').forEach(b=>b.addEventListener('click',()=>{const sh=b.closest('.fb-shot');const o=sh.classList.toggle('open');b.textContent=o?'Recolher depoimento':'Ler depoimento completo';}));
   (function(){
     const plane=document.getElementById('wfPlane'),svg=document.getElementById('wfSvg');
     if(!plane||!svg)return;
