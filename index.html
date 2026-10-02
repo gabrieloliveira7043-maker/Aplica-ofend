@@ -88,6 +88,7 @@
   .team-photo.ph{background:linear-gradient(160deg,#e7e2d4,#d8d2c2);color:var(--navy);font-size:26px;}
   .team-name{font-weight:700;font-size:14.5px;}
   .team-role{font-size:12px;color:var(--ink-soft);margin-top:2px;}
+  .team-bio{margin-top:12px;font-size:13px;line-height:1.6;color:var(--ink-soft);}
   .filter-heading{text-align:center;margin-bottom:46px;}
   .filter-heading h2{font-size:clamp(26px,3.6vw,36px);}
   .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;}
@@ -239,11 +240,6 @@
     transform:rotateX(var(--rx)) rotateY(var(--ry));transform-style:preserve-3d;transition:transform .25s ease-out;will-change:transform;}
   .wf-chip{position:absolute;top:20px;left:24px;display:inline-flex;align-items:center;gap:10px;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.75);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:8px 16px;}
   .wf-chip i{width:8px;height:8px;border-radius:50%;background:#4fd08a;box-shadow:0 0 10px #4fd08a;}
-  .wf-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;overflow:visible;}
-  .wf-line{fill:none;stroke:rgba(201,161,90,.32);stroke-width:2.2;}
-  .wf-flow{fill:none;stroke:var(--gold-light);stroke-width:2.6;stroke-linecap:round;stroke-dasharray:.1 15;animation:wf-dash 1.1s linear infinite;filter:drop-shadow(0 0 5px rgba(218,185,121,.9));}
-  .wf-dot{fill:#0b1730;stroke:var(--gold);stroke-width:2;}
-  @keyframes wf-dash{to{stroke-dashoffset:-15.1;}}
   @keyframes wf-float{0%,100%{translate:0 0;}50%{translate:0 -9px;}}
   .wf-node{position:relative;padding:20px 20px 22px;border-radius:16px;background:linear-gradient(160deg,rgba(255,255,255,.13),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.17);
     box-shadow:0 32px 50px -22px rgba(0,0,0,.75),inset 0 1px 0 rgba(255,255,255,.14);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
@@ -253,16 +249,12 @@
   .wf-title{color:#fff;font-weight:700;font-size:16px;line-height:1.25;margin-bottom:8px;letter-spacing:-.01em;}
   .wf-desc{color:rgba(255,255,255,.72);font-size:13px;line-height:1.55;}
   .wf-badge{position:absolute;top:18px;right:18px;font-size:11px;letter-spacing:.14em;font-weight:700;color:var(--gold-light);}
-  .wf-port{position:absolute;top:50%;width:12px;height:12px;border-radius:50%;background:#0b1730;border:2px solid var(--gold);transform:translateY(-50%);}
-  .wf-port.in{left:-7px;}
-  .wf-port.out{right:-7px;}
   @media (max-width:900px){
     .wf-stage{perspective:none;}
     .wf-plane{grid-template-columns:1fr;row-gap:46px;padding:70px 22px 40px;transform:none;max-width:460px;margin:0 auto;}
     .wf-node{grid-column:1 !important;grid-row:auto !important;margin-top:0 !important;}
-    .wf-port{display:none;}
   }
-  @media (prefers-reduced-motion:reduce){.wf-node,.wf-flow{animation:none;}}
+  @media (prefers-reduced-motion:reduce){.wf-node,}
   /* ----- Depoimentos com prints ----- */
   .test-card{display:flex;flex-direction:column;padding:20px;overflow:visible;border:1px solid #ebe6d9;align-self:start;}
   .fb-tag{font-size:11px;letter-spacing:.24em;font-weight:700;color:var(--gold);margin:2px 4px 14px;}
@@ -579,20 +571,20 @@
     </div>
     <div class="wf-stage reveal" id="wfStage">
       <div class="wf-plane" id="wfPlane">
-        <div class="wf-chip"><i></i>Formação FEND · fluxo de 12 meses</div>
-        <svg class="wf-svg" id="wfSvg" aria-hidden="true"></svg>
-      <div class="wf-node" style="grid-column:1;grid-row:1;margin-top:0px;--c1:#d2ad62;--c2:#8a6a2e;animation-delay:-0.0s;animation-duration:6.0s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">01</span><div class="wf-ico">📚</div><div class="wf-title">Metodologia Autonomia Estratégica</div><div class="wf-desc">Aulas modulares em microlearning para avançar pela formação no seu ritmo.</div></div>
-      <div class="wf-node" style="grid-column:2;grid-row:1;margin-top:34px;--c1:#5b8be0;--c2:#1c2f55;animation-delay:-0.9s;animation-duration:6.8s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">02</span><div class="wf-ico">🧭</div><div class="wf-title">Onboarding individual</div><div class="wf-desc">Direcionamento individual para começar o ciclo.</div></div>
-      <div class="wf-node" style="grid-column:3;grid-row:1;margin-top:0px;--c1:#e08f6e;--c2:#8c4e3b;animation-delay:-1.8s;animation-duration:7.6s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">03</span><div class="wf-ico">🎙️</div><div class="wf-title">Mentoria mensal</div><div class="wf-desc">Encontros com especialistas do mercado e acesso aos bastidores de operações reais.</div></div>
-      <div class="wf-node" style="grid-column:4;grid-row:1;margin-top:34px;--c1:#e5697a;--c2:#8a2f45;animation-delay:-2.7s;animation-duration:8.4s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">04</span><div class="wf-ico">🔥</div><div class="wf-title">Hotseats</div><div class="wf-desc">Seus casos e desafios levados para direcionamento de mentoras e estrategistas.</div></div>
-      <div class="wf-node" style="grid-column:4;grid-row:2;margin-top:34px;--c1:#62b39a;--c2:#2e6b57;animation-delay:-3.6s;animation-duration:6.0s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">05</span><div class="wf-ico">🗓️</div><div class="wf-title">All Hands trimestral</div><div class="wf-desc">Planejamento, revisão e definição dos próximos movimentos.</div></div>
-      <div class="wf-node" style="grid-column:3;grid-row:2;margin-top:0px;--c1:#9a86e0;--c2:#4a3d8f;animation-delay:-4.5s;animation-duration:6.8s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">06</span><div class="wf-ico">💼</div><div class="wf-title">Consultorias individuais</div><div class="wf-desc">Direcionamento estratégico aplicado ao seu contexto.</div></div>
-      <div class="wf-node" style="grid-column:2;grid-row:2;margin-top:34px;--c1:#4fbf7f;--c2:#1f6b45;animation-delay:-5.4s;animation-duration:7.6s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">07</span><div class="wf-ico">💬</div><div class="wf-title">Comunidade no WhatsApp</div><div class="wf-desc">Grupo ativo 7 dias por semana para acompanhamento, dúvidas e networking.</div></div>
-      <div class="wf-node" style="grid-column:1;grid-row:2;margin-top:0px;--c1:#e87b5a;--c2:#9a3a24;animation-delay:-6.3s;animation-duration:8.4s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">08</span><div class="wf-ico">🆘</div><div class="wf-title">Sessões SOS</div><div class="wf-desc">Suporte para desafios de urgência durante a formação.</div></div>
-      <div class="wf-node" style="grid-column:1;grid-row:3;margin-top:0px;--c1:#e6c15a;--c2:#9a7420;animation-delay:-0.2s;animation-duration:6.0s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">09</span><div class="wf-ico">⭐</div><div class="wf-title">Sessão Núcleo com Cami</div><div class="wf-desc">Um espaço de acompanhamento direto com a Cami.</div></div>
-      <div class="wf-node" style="grid-column:2;grid-row:3;margin-top:34px;--c1:#58a6d6;--c2:#245a82;animation-delay:-1.1s;animation-duration:6.8s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">10</span><div class="wf-ico">🤝</div><div class="wf-title">Hub de Vagas e Indicações</div><div class="wf-desc">Oportunidades profissionais circulando dentro da rede.</div></div>
-      <div class="wf-node" style="grid-column:3;grid-row:3;margin-top:0px;--c1:#6fbf6a;--c2:#2f6b2c;animation-delay:-2.0s;animation-duration:7.6s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">11</span><div class="wf-ico">🌿</div><div class="wf-title">Clube Catarse</div><div class="wf-desc">Comunidade de incentivo ao desenvolvimento integral e benefícios exclusivos para membros.</div></div>
-      <div class="wf-node" style="grid-column:4;grid-row:3;margin-top:34px;--c1:#d2ad62;--c2:#0b1730;animation-delay:-2.9s;animation-duration:8.4s;"><span class="wf-port in"></span><span class="wf-port out"></span><span class="wf-badge">12</span><div class="wf-ico">🎓</div><div class="wf-title">Projeto de aplicação</div><div class="wf-desc">Você constrói e valida projetos ao longo dos níveis para concluir suas certificações.</div></div>
+        <div class="wf-chip"><i></i>Formação FEND · 12 meses de acompanhamento</div>
+        
+      <div class="wf-node" style="grid-column:1;grid-row:1;margin-top:0px;--c1:#d2ad62;--c2:#8a6a2e;animation-delay:-0.0s;animation-duration:6.0s;"><span class="wf-badge">01</span><div class="wf-ico">📚</div><div class="wf-title">Metodologia Autonomia Estratégica</div><div class="wf-desc">Aulas modulares em microlearning para avançar pela formação no seu ritmo.</div></div>
+      <div class="wf-node" style="grid-column:2;grid-row:1;margin-top:34px;--c1:#5b8be0;--c2:#1c2f55;animation-delay:-0.9s;animation-duration:6.8s;"><span class="wf-badge">02</span><div class="wf-ico">🧭</div><div class="wf-title">Onboarding individual</div><div class="wf-desc">Direcionamento individual para começar o ciclo.</div></div>
+      <div class="wf-node" style="grid-column:3;grid-row:1;margin-top:0px;--c1:#e08f6e;--c2:#8c4e3b;animation-delay:-1.8s;animation-duration:7.6s;"><span class="wf-badge">03</span><div class="wf-ico">🎙️</div><div class="wf-title">Mentoria mensal</div><div class="wf-desc">Encontros com especialistas do mercado e acesso aos bastidores de operações reais.</div></div>
+      <div class="wf-node" style="grid-column:4;grid-row:1;margin-top:34px;--c1:#e5697a;--c2:#8a2f45;animation-delay:-2.7s;animation-duration:8.4s;"><span class="wf-badge">04</span><div class="wf-ico">🔥</div><div class="wf-title">Hotseats</div><div class="wf-desc">Seus casos e desafios levados para direcionamento de mentoras e estrategistas.</div></div>
+      <div class="wf-node" style="grid-column:1;grid-row:2;margin-top:34px;--c1:#62b39a;--c2:#2e6b57;animation-delay:-3.6s;animation-duration:6.0s;"><span class="wf-badge">05</span><div class="wf-ico">🗓️</div><div class="wf-title">All Hands trimestral</div><div class="wf-desc">Planejamento, revisão e definição dos próximos movimentos.</div></div>
+      <div class="wf-node" style="grid-column:2;grid-row:2;margin-top:0px;--c1:#9a86e0;--c2:#4a3d8f;animation-delay:-4.5s;animation-duration:6.8s;"><span class="wf-badge">06</span><div class="wf-ico">💼</div><div class="wf-title">Consultorias individuais</div><div class="wf-desc">Direcionamento estratégico aplicado ao seu contexto.</div></div>
+      <div class="wf-node" style="grid-column:3;grid-row:2;margin-top:34px;--c1:#4fbf7f;--c2:#1f6b45;animation-delay:-5.4s;animation-duration:7.6s;"><span class="wf-badge">07</span><div class="wf-ico">💬</div><div class="wf-title">Comunidade no WhatsApp</div><div class="wf-desc">Grupo ativo 7 dias por semana para acompanhamento, dúvidas e networking.</div></div>
+      <div class="wf-node" style="grid-column:4;grid-row:2;margin-top:0px;--c1:#e87b5a;--c2:#9a3a24;animation-delay:-6.3s;animation-duration:8.4s;"><span class="wf-badge">08</span><div class="wf-ico">🆘</div><div class="wf-title">Sessões SOS</div><div class="wf-desc">Suporte para desafios de urgência durante a formação.</div></div>
+      <div class="wf-node" style="grid-column:1;grid-row:3;margin-top:0px;--c1:#e6c15a;--c2:#9a7420;animation-delay:-0.2s;animation-duration:6.0s;"><span class="wf-badge">09</span><div class="wf-ico">⭐</div><div class="wf-title">Sessão Núcleo com Cami</div><div class="wf-desc">Um espaço de acompanhamento direto com a Cami.</div></div>
+      <div class="wf-node" style="grid-column:2;grid-row:3;margin-top:34px;--c1:#58a6d6;--c2:#245a82;animation-delay:-1.1s;animation-duration:6.8s;"><span class="wf-badge">10</span><div class="wf-ico">🤝</div><div class="wf-title">Hub de Vagas e Indicações</div><div class="wf-desc">Oportunidades profissionais circulando dentro da rede.</div></div>
+      <div class="wf-node" style="grid-column:3;grid-row:3;margin-top:0px;--c1:#6fbf6a;--c2:#2f6b2c;animation-delay:-2.0s;animation-duration:7.6s;"><span class="wf-badge">11</span><div class="wf-ico">🌿</div><div class="wf-title">Clube Catarse</div><div class="wf-desc">Comunidade de incentivo ao desenvolvimento integral e benefícios exclusivos para membros.</div></div>
+      <div class="wf-node" style="grid-column:4;grid-row:3;margin-top:34px;--c1:#d2ad62;--c2:#0b1730;animation-delay:-2.9s;animation-duration:8.4s;"><span class="wf-badge">12</span><div class="wf-ico">🎓</div><div class="wf-title">Projeto de aplicação</div><div class="wf-desc">Você constrói e valida projetos ao longo dos níveis para concluir suas certificações.</div></div>
       </div>
     </div>
   </div>
@@ -616,11 +608,11 @@
     </div>
     <div class="team-label reveal"><span>Time de estrategistas</span></div>
     <div class="team-grid reveal">
-      <div class="team-card"><div class="team-photo"><img src="team-1.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Camila de Leon</div><div class="team-role">Estrategista</div></div>
-      <div class="team-card"><div class="team-photo"><img src="team-2.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Andressa Lima</div><div class="team-role">Estrategista</div></div>
-      <div class="team-card"><div class="team-photo"><img src="team-3.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Nana Júlia</div><div class="team-role">Estrategista</div></div>
-      <div class="team-card"><div class="team-photo"><img src="team-4.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Jessica Niehues</div><div class="team-role">Estrategista</div></div>
-      <div class="team-card"><div class="team-photo"><img src="team-5.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Mila Romero</div><div class="team-role">Estrategista</div></div>
+      <div class="team-card"><div class="team-photo"><img src="team-1.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Camila de Leon</div><div class="team-role">Estrategista</div><p class="team-bio">Criadora da metodologia Autonomia Estratégica e coordenadora da Formação Estrategista em Negócios Digitais.</p></div>
+      <div class="team-card"><div class="team-photo"><img src="team-2.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Andressa Lima</div><div class="team-role">Estrategista</div><p class="team-bio">Cofundadora da Saga Educação. Liderou operações de lançamento que somam oito dígitos em faturamento. Especialista em estrutura comercial e gestão de equipes de marketing.</p></div>
+      <div class="team-card"><div class="team-photo"><img src="team-3.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Nana Júlia</div><div class="team-role">Estrategista</div><p class="team-bio">Estrategista de conteúdo e construção de audiência. Atuou em projetos de posicionamento de autoridade para empresárias e infoprodutoras de referência.</p></div>
+      <div class="team-card"><div class="team-photo"><img src="team-4.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Jessica Niehues</div><div class="team-role">Estrategista</div><p class="team-bio">Mais de uma década em comunicação estratégica. Conduziu campanhas de marca e performance para operações nacionais com presença em múltiplos canais.</p></div>
+      <div class="team-card"><div class="team-photo"><img src="team-5.png" alt="" style="width:100%;height:100%;object-fit:cover;transform:scale(1.04)"></div><div class="team-name">Mila Romero</div><div class="team-role">Estrategista</div><p class="team-bio">Especialista em funis de aquisição e CRO. Responsável pela arquitetura de funis perpétuos em operações educacionais e SaaS no mercado brasileiro.</p></div>
     </div>
   </div>
 </section>
@@ -685,34 +677,8 @@
     window.addEventListener('mouseup',()=>{d=false;s.style.cursor='grab';});
     window.addEventListener('mousemove',e=>{if(!d)return;s.scrollLeft=l-(e.pageX-x);});})();
   (function(){
-    const plane=document.getElementById('wfPlane'),svg=document.getElementById('wfSvg');
-    if(!plane||!svg)return;
-    const nodes=[...plane.querySelectorAll('.wf-node')],NS='http://www.w3.org/2000/svg',links=[];
-    for(let i=0;i<nodes.length-1;i++){
-      const mk=(t,c)=>{const e=document.createElementNS(NS,t);e.setAttribute('class',c);return e;};
-      const l=[mk('path','wf-line'),mk('path','wf-flow'),mk('circle','wf-dot'),mk('circle','wf-dot')];
-      l[2].setAttribute('r',4.5);l[3].setAttribute('r',4.5);svg.append(...l);links.push(l);
-    }
-    const ty=n=>{const t=getComputedStyle(n).translate;if(!t||t==='none')return 0;const p=t.split(' ');return parseFloat(p[1]!==undefined?p[1]:p[0])||0;};
-    function box(n){return{x:n.offsetLeft,y:n.offsetTop+ty(n),w:n.offsetWidth,h:n.offsetHeight};}
-    function update(){
-      for(let i=0;i<links.length;i++){
-        const a=box(nodes[i]),b=box(nodes[i+1]);let x1,y1,x2,y2,d;
-        const acx=a.x+a.w/2,bcx=b.x+b.w/2;
-        if(Math.abs(bcx-acx)<a.w*0.5){
-          x1=acx;y1=a.y+a.h;x2=bcx;y2=b.y;const k=Math.max(24,(y2-y1)*0.5);
-          d=`M${x1} ${y1} C${x1} ${y1+k} ${x2} ${y2-k} ${x2} ${y2}`;
-        }else{
-          const dir=bcx>acx?1:-1;x1=dir>0?a.x+a.w:a.x;y1=a.y+a.h/2;x2=dir>0?b.x:b.x+b.w;y2=b.y+b.h/2;
-          const k=Math.max(36,Math.abs(x2-x1)*0.5);
-          d=`M${x1} ${y1} C${x1+dir*k} ${y1} ${x2-dir*k} ${y2} ${x2} ${y2}`;
-        }
-        const L=links[i];L[0].setAttribute('d',d);L[1].setAttribute('d',d);
-        L[2].setAttribute('cx',x1);L[2].setAttribute('cy',y1);L[3].setAttribute('cx',x2);L[3].setAttribute('cy',y2);
-      }
-    }
-    (function loop(){update();requestAnimationFrame(loop);})();
-    const stage=document.getElementById('wfStage');
+    const plane=document.getElementById('wfPlane'),stage=document.getElementById('wfStage');
+    if(!plane||!stage)return;
     if(window.matchMedia('(min-width:901px)').matches&&window.matchMedia('(hover:hover)').matches){
       stage.addEventListener('mousemove',e=>{const r=stage.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
         plane.style.setProperty('--rx',(11-y*8)+'deg');plane.style.setProperty('--ry',(x*10)+'deg');});
